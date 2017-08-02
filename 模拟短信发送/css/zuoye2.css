@@ -1,0 +1,126 @@
+body{
+	background: url(../images/bg.png) no-repeat;
+	background-size: 100%;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+.wrap{
+	width: 356px;
+	height: 634px;
+	padding-top: 45px;
+	background: #d4d4e4;
+	margin: 100px auto 0;
+	border-radius: 20px;
+	box-shadow:5px 5px 8px 4px #889ad9;
+	position: relative;
+}
+.telephoneReceiver{
+	width: 58px;
+	height: 4px;
+	background: #9f9ea5;
+	position: absolute;
+	left: 50%;
+	margin-left: -29px;
+	top: 22px;
+}
+.logo{
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	left: 50%;
+	bottom: 15px;
+	margin-left: -25px;
+	background: url(../images/logo.png) no-repeat;
+}
+
+.screen{
+	width: 318px;
+	height: 498px;
+	padding-bottom: 60px;
+	border: 2px solid #bfbfbf;
+	margin:0 0 0 17px;
+	background-color: #fff;
+	position: relative;
+}
+#list{
+	width: 100%;
+	height: 490px;
+	overflow: auto;
+	padding-bottom: 8px;
+}
+#list li{
+	padding-top: 20px;
+	word-wrap: break-word;
+}
+.headShow{
+	width: 68px;
+	text-align: center;
+}
+.msg{
+	max-width: 200px;
+	border-radius: 5px;
+	padding: 10px 15px;
+	line-height: 20px;
+	position: relative;
+}
+.msgR{
+	background-color: #bab3ce;
+	color: #FFF;
+	float: right;
+}
+
+.msgL{
+	background-color: #e5e5e5;
+	color: #000;
+	float: left;
+}
+
+
+.triangle{
+	position: absolute;
+	top: 16px;
+	border: 5px solid transparent;
+	
+}
+.triangleR{
+	right: -5px;
+	border-right: none;
+	border-left-color: #bab3ce;
+}
+.triangleL{
+	left: -5px;
+	border-left: none;
+	border-right-color: #e5e5e5;
+}
+
+.toolBar{
+	height: 40px;
+	padding: 11px 0 9px 16px;
+	background: #e5e5e5;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 302px;
+}
+#imgBox{
+	width: 35px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#text{
+	float: left;
+	width: 190px;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	margin: 0 16px 0 15px;
+	text-indent: 15px;
+
+}
+#send{
+	float: left;
+	color: #e15671;
+	line-height: 40px;
+}
