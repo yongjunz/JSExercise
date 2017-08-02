@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换综合实例</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/tab1.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="padBox">
+			<div class="telephoneReceiver"></div>
+			<div class="screen">
+				<!-- 提醒框s -->
+				<div id="alertWrap">
+					<div id="alertBox">
+						<div id="closeBtn">x</div>
+						<h2>JavaScript提醒</h2>
+						<p id="alertInfo"></p>
+						<a id="sure">确定</a>
+					</div>
+				</div>
+				
+				<!-- 提醒框e -->
+				<!-- 按钮组s -->
+				<div class="btnWrap">
+					<span id="tab1" class="on">循环切换</span>
+					<span id="tab2">顺序切换</span>
+				</div>
+				<p id="tabInfo">
+					图片可从最后一张跳转到第一张循环切换
+				</p>
+				<!-- 按钮组e -->
+				<!-- 图片容器s -->
+				<div class="showBox">
+					<img id="img">
+					<p id="numShow"></p>
+					<p id="tips"></p>
+					<a href="javascript:;" class="btn prev" id="prev"><</a>
+					<a href="javascript:;" class="btn next" id="next">></a>
+				</div>
+				<!-- 图片容器e -->
+			</div>
+			<div class="logo">
+				<img src="./images/logo.png">
+			</div>
+		</div>
+	</div>
+<script src="./js/index.js"></script>
+</body>
+</html>
