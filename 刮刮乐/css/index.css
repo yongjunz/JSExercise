@@ -1,0 +1,27 @@
+div{
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	background-image: url(../images/timg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	box-sizing:border-box;
+	border: 1px solid #fff;
+	font-size: 30px;
+	opacity: .3;
+	transition:.7s;
+	z-index: 1;
+	animation: 5s linear infinite acg alternate;
+}
+
+@keyframes acg{
+	0%{
+		background-image: url(../images/timg.jpg);
+	}
+	50%{
+		background-image: url(../images/timg2.jpg);
+	}
+	100%{
+		background-image: url(../images/timg3.jpg);
+	}
+}
