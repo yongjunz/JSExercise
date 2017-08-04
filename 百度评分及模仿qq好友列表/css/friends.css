@@ -1,0 +1,106 @@
+html{
+	height: 100%;
+}
+body{
+	background: url(../images/friendsBg.png) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+}
+.box{
+	width: 356px;
+	height: 635px;
+	margin: 66px auto 0;
+	padding-top: 45px;
+	border-radius: 20px;
+	position: relative;
+}
+.whiteBg{
+	background: #fff;
+	border:1px solid #d7d8db;
+}
+.telephoneReceiver{
+	width: 58px;
+	height: 4px;
+	border-radius: 5px;
+	border: 1px solid #dcdcdc;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -30px;
+	margin-top: 20px;
+}
+.homeBtn{
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	border: 1px solid #dcdcdc;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	bottom: 16px;
+}
+.homeBtn span{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+	border: 1px solid #dcdcdc;
+	vertical-align: middle;
+}
+.screenBox{
+	width: 282px;
+	height: 522px;
+	margin:0 auto;
+	padding: 20px;
+}
+.screenBox1{
+	background: url(../images/screenBg1.png) no-repeat;
+}
+.list{
+	width: 100%;
+	height: 522px;
+	overflow: auto;
+}
+.liTab{
+	border-radius: 4px;
+	overflow: hidden;
+	background: #FFF;
+	margin-bottom: 10px;
+	text-indent: 40px;
+	background: #dd556f;
+	color: #FFF;
+}
+.liTab h2{
+	height: 46px;
+	line-height: 46px;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 14px 20px;
+	cursor: pointer;
+}
+.liTab .normal{
+	background-color:#fff;
+	color: #db2953;
+	background-image:url(../images/normal.png);
+}
+.liTab .on{
+	background-image:url(../images/on.png);
+	background-color:rgba(0,0,0,.4);
+}
+.liTab li{
+	height: 38px;
+	line-height: 38px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.liTab li.active{
+	background: blue;
+}
+.liTab li.hover{
+	background: #ccc;
+}
+.nameList{
+	display: none;
+}

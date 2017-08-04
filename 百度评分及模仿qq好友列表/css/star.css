@@ -1,0 +1,86 @@
+.wrap{
+	width: 764px;
+	height: 742px;	
+	padding-top: 58px;
+	background: url(../images/bg.jpg) no-repeat;
+	margin: 0 auto;
+}
+.content{
+	width: 460px;
+	height: 177px;
+	padding-top: 23px;
+	margin: 0 auto 42px;
+	position: relative;
+}
+.topCon{
+	background: #fff;
+}
+.title{
+	margin-bottom: 30px;
+}
+.logo{
+	float: left;
+	margin-left: 109px;
+}
+.textInfo{
+	float: left;
+	margin: 7px 0 0 17px;
+	padding-left: 13px;
+	height: 20px;
+	border-left: 1px solid #000;
+	font-size: 18px;
+}
+.starWrap{
+	margin-bottom: 27px;
+	padding-left: 89px;
+	height: 30px;
+}
+.starList{
+	float: left;
+	width: 200px;
+	margin-right: 20px;
+}
+.starList li{
+	float: left;
+	padding-right: 10px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.topStarWrap li{
+	background: url(../images/start_gray.png) no-repeat left;
+}
+.topStarWrap li.redStar{
+	background: url(../images/start_red.png) no-repeat;
+}
+.topStarWrap li.lightStar{
+	background: url(../images/start_light.png) no-repeat;
+}
+.tips{
+	float: left;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 2px;
+	font-size: 14px;
+	display: none;
+}
+.topStarWrap .tips{
+	background: #e15671;
+	border-radius: 5px;
+	color: #FFF;
+}
+.bottom{
+	text-align: center;
+}
+.topCon .bottom{
+	height: 59px;
+	line-height: 59px;
+	color: #FFF;
+	font-size: 14px;
+	background: #e15671;
+}
+.topCon .bottom img{
+	vertical-align: middle;
+}

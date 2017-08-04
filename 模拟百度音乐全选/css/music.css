@@ -1,0 +1,136 @@
+
+html{
+	height: 100%;
+}
+body{
+	font-size: 14px;
+	height: 100%;
+}
+.wrap{
+	width: 764px;
+	height: 700px;
+	padding-top: 100px;
+	margin:0 auto;
+	background: url(../images/bg.png) no-repeat;
+}
+.musicBox{
+	width: 480px;
+	background: #fff url(../images/logo.png) no-repeat 140px 35px;
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.musicList{
+	padding: 20px 0;
+	background: rgba(255,255,255,.8);
+}
+.musicList li{
+	height: 36px;
+	line-height: 36px;
+	padding-right: 35px;
+	cursor: pointer;
+}
+/*.musicList li:nth-child(even){
+	background: rgba(252,238,241,.8);
+}*/
+.musicList li.active{
+	background: rgba(230,116,139,.8) !important;
+	color: #FFF;
+}
+.musicList li input{
+	vertical-align: middle;
+	margin: 0 20px 0 30px;
+}
+
+.toolBar{
+	height: 46px;
+	line-height: 46px;
+	background: #e15671;
+	color: #FFF;
+}
+.toolBar input{
+	vertical-align: middle;
+	margin: 0 20px 0 30px;
+}
+.operate{
+	float: right;
+	margin-right: 10px;
+	margin-top: 13px;
+	height: 24px;
+	line-height: 24px;
+}
+.operate li{
+	float: left;
+	margin:0 20px;
+	cursor: pointer;
+}
+.operate li i,.operate li i span{
+	float: left;
+}
+.operate li i{
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	background-image: url(../images/1.png);
+	background-repeat: no-repeat;
+}
+.fav{
+	background-position: 0 3px;
+}
+.add{
+	background-position: 0 -21px;
+}
+.del{
+	background-position: 0 -46px;
+}
+
+/*添加歌曲*/
+#zhezhao{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.addSong{
+	width: 500px;
+	height: 200px;
+	padding: 30px 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -270px;
+	margin-top: -280px;
+	background: #fff;
+	border-radius: 15px;
+}
+.addSong p{
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 50px;
+}
+.addSong p span{
+	float: left;
+	width: 80px;
+	text-align: right;
+}
+.addSong p input{
+	float: left;
+	width: 400px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #ccc;
+}
+.addSong .btnBox{
+	text-align: center;
+}
+.addSong .btnBox input{
+	width: 80px;
+	height: 40px;
+	background: #ccc;
+	border-radius: 10px;
+	margin: 0 15px;
+	cursor: pointer;
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度音乐全选</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/music.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="musicBox">
+			<ul class="musicList" id="musicList">
+				<!--
+				<li>
+					<input type="checkbox">
+					<span>私奔</span>
+					<em class="fr">梁博</em>
+				</li>
+				-->
+			</ul>
+			<div class="toolBar">
+				<input type="checkbox" id="selectAll">
+				<span><label for="selectAll">全选</label></span>
+				<ul class="operate">
+					<li>
+						<i class="fav"></i>
+						<span>收藏</span>
+					</li>
+					<li id="add">
+						<i class="add"></i>
+						<span>添加</span>
+					</li>
+					<li id="del">
+						<i class="del"></i>
+						<span>删除</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 添加歌曲框 -->
+	<div id="zhezhao">
+		<div class="addSong">
+		<form>
+			<p>
+				<span>歌曲名：</span>
+				<input type="text" id="songTitle" />
+			</p>
+			<p>
+				<span>歌手名：</span>
+				<input type="text" id="singerName" />
+			</p>
+			<div class="btnBox">
+				<input type="button" id="submit" value="提交" />
+				<input type="reset" value="重置" />
+				<input type="button" id="cancel" value="取消" />
+			</div>
+		</form>
+		</div>
+	</div>
+	<script src="./js/music.js"></script>
+</body>
+</html>
