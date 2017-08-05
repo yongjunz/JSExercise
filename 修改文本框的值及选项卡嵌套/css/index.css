@@ -1,0 +1,79 @@
+body{
+	background: url(../images/bg.png) no-repeat;
+	background-size: cover;
+	font-size: 16px;
+}
+.box{
+	width: 440px;
+	border-radius: 10px;
+	background: #371e23;
+	overflow: hidden;
+	/*margin: 100px auto 0;*/
+	float: left;
+	margin: 100px 200px 0 200px;
+}
+.logo{
+	height: 76px;
+	line-height: 76px;
+	background: #FFF url(../images/logo.png) no-repeat 98px 23px;
+	text-indent: 235px;
+	font-size: 18px;
+	color: #e15671;
+}
+.list li{
+	padding: 25px 0 25px 20px;
+	height: 36px;
+	line-height: 36px;
+}
+.list li+li{
+	border-top: 1px dashed #69585b;
+}
+.titleWrap{
+	color: #fff;
+}
+.titleWrap span{
+	float: left;
+	padding-right: 25px;
+}
+.titleWrap i{
+	float: left;
+	width: 24px;
+	height: 24px;
+	background: url(../images/revampIcon.png);
+	margin-top: 6px;
+	cursor: pointer;
+}
+.revampWrap{
+	display: none;
+}
+.revampWrap input{
+	float: left;
+	margin-right: 10px;
+}
+.revampWrap input:nth-of-type(1){
+	height: 34px;
+	line-height: 34px;
+	border: 1px solid #e15671;
+	color: #fff;
+	text-indent: 10px;
+}
+.revampWrap input:nth-of-type(2){
+	height: 36px;
+	line-height: 36px;
+	width: 60px;
+	text-align: center;
+	background: #e15671;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.revampWrap input:nth-of-type(3){
+	height: 36px;
+	line-height: 36px;
+	width: 60px;
+	border: 1px solid #e15671;
+	background: transparent;
+	color: #e15671;
+	border-radius: 5px;
+	cursor: pointer;
+}

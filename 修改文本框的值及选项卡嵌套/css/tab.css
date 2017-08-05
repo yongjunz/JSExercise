@@ -1,0 +1,59 @@
+.wrap{
+	width: 700px;
+	height: 500px;
+	margin: 100px auto 0;
+	border:1px solid #000;
+}
+.siderBar{
+	height: 100%;
+	width: 99px;
+	float: left;
+	border-right: 1px solid #000;
+}
+.siderBar li{
+	height: 99px;
+	line-height: 99px;
+	text-align: center;
+	font-size: 20px;
+}
+.siderBar li+li{
+	border-top: 1px solid #000;
+}
+.con{
+	float: left;
+	width: 600px;
+	height: 100%;
+}
+.showTab{
+	display: none;
+}
+.tabItem{
+	height: 400px;
+	display: none;
+}
+.tabItem img{
+	height: 400px;
+	width: 600px;
+}
+.smallTab{
+	height: 100px;
+	line-height: 100px;
+}
+.smallTab li{
+	float: left;
+	height: 100px;
+	text-align: center;
+	background: #ccc;
+}
+.smallTab1 li,.smallTab4 li{
+	width: 33.3333%;
+}
+.smallTab2 li,.smallTab5 li{
+	width: 50%;
+}
+.smallTab3 li{
+	width: 25%;
+}
+.active{
+	background: pink !important;
+}

@@ -1,0 +1,80 @@
+body{
+	background: url(../images/bg.png) no-repeat;
+	background-size: cover;
+	font-size: 16px;
+	color: #acacac;
+}
+.box{
+	width: 479px;
+	margin: 170px auto 0;
+	padding: 55px 0 0 0;
+	border-radius: 40px;
+	overflow: hidden;
+	background:#2f3030 url(../images/top.png) no-repeat;
+}
+.logo{
+	text-align: center;
+	margin-bottom: 45px;
+}
+.list{
+	padding-left: 40px;
+	padding-bottom: 15px;
+}
+.list li{
+	margin-bottom: 15px;
+	line-height: 36px;
+}
+.reduce,.add{
+	width: 52px;
+	height: 44px;
+	float: left;
+	margin-right: 8px;
+	cursor: pointer;
+}
+.reduce{
+	background: url(../images/reduceBtn.png);
+}
+.add{
+	background: url(../images/addBtn.png);
+}
+.goodsNum{
+	width: 44px;
+	height: 36px;
+	line-height: 36px;
+	margin-right: 8px;
+	font-size: 16px;
+	float: left;
+	text-align: center;
+	color: #000;
+	background: #fff;
+	border-radius: 5px;
+}
+.info{
+	height: 36px;
+	min-width: 215px;
+	background: #171818;
+	border-radius: 5px;
+	margin-left: 10px;
+	text-indent: 15px;
+	padding-right: 5px;
+}
+.total{
+	padding: 30px 0 25px 45px;
+	background: #212221;
+}
+.total p{
+	height: 36px;
+	line-height: 36px;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+.total p span{
+	height: 36px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0 15px;
+	margin: 0 5px;
+	color: #000;
+}
