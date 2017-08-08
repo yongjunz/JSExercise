@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/movice.css">
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="logo"><img src="./images/moviceLogo.png" alt=""></div>
+		<div class="moviceTopLeft"></div>
+		<div class="moviceTopRight"></div>
+		<div class="box">
+			<ul id="list">
+				<!-- <li>
+					<img src="./images/movice1.png">
+					<div class="bar">
+						<h2 class="title">妙味课堂</h2>
+						<p class="info">
+							一个缔造“前端工程师”的地方
+						</p>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+<script>
+var arrTitle = ['妙味课堂','VIP会员视频','零基础WEB前端开发课程','JavaScript资深全栈课程','关于我们'];
+var arrInfo = ['一个缔造“前端工程师”的地方','国内海量前端开发视频汇总','PC端+移动端+响应式+bootstrap+less','作用域+闭包+原型链+核心算法+jQuery3+EC6','妙味新闻+公司介绍+讲师团队+联系我们 '];
+var arrImg = ['./images/movice1.png','./images/movice2.png','./images/movice3.png','./images/movice4.png','./images/movice5.png'];
+var len = arrTitle.length;
+var str = '';
+var n = 0;
+var m = 0;
+var list = $('#list');
+var w = 380;//每个Li的宽度
+var bar = $('.bar');
+var timer1 = null;
+var timer2 = null;
+list.style.width = w * ( len + 1 ) + 'px';
+for(var i = 0; i < len; i++){
+	str += `
+		<li>
+			<img src="${arrImg[i]}">
+			<div class="bar">
+				<h2 class="title">${arrTitle[i]}</h2>
+				<p class="info">
+					${arrInfo[i]}
+				</p>
+			</div>
+		</li>
+	`;
+}
+str += `
+	<li>
+		<img src="${arrImg[0]}">
+		<div class="bar">
+			<h2 class="title">${arrTitle[0]}</h2>
+			<p class="info">
+				${arrInfo[0]}
+			</p>
+		</div>
+	</li>
+	`;
+list.innerHTML = str;
+function anima(ele){
+	ele.timer1 = mTween(ele,'bottom',0,300,'linear',function(){
+		ele.timer2 = setTimeout(function(){
+			mTween(ele,'bottom',-70,300,'linear');
+		},2000);
+		console.log(ele.innerHTML + ':' + ele.timer2)
+	});
+}
+anima(bar[0]);
+
+//控制左右滚动
+timer1 = setInterval(play,3100);
+
+function play(){
+	n++;
+	var target = n * -w;
+	mTween(list,'left',target,300,'linear',function(){
+		m++;
+ 		m= m%5;
+ 		anima(bar[m]);
+		if( n == len ){
+			list.style.left = 0;
+			n = 0;
+		}
+	})
+}
+//鼠标移动到图片上时，清除定时器
+var lis = list.getElementsByTagName('li');
+for(var j = 0; j < len; j++){
+	lis[j].index = j;
+	lis[j].onmouseover = function(){
+		clearInterval(timer1);
+		clearInterval(bar[this.index].timer1);
+		clearTimeout(bar[this.index].timer2);
+	}
+	lis[j].onmouseout = function(){
+		timer1 = setInterval(play,3200);
+		anima(bar[this.index]);
+	}
+	bar.onmouseout = function(){
+		return false;
+	}
+}
+</script>
+</body>
+</html>

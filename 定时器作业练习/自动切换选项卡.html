@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/tab.css">
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+	<div class="box">
+		<div id="wrap1" class="wrap fl">
+			<ul class="navBar">
+				<li class="active">专题</li>
+				<li>视频</li>
+				<li>图片</li>
+			</ul>
+			<div class="con">
+				<div class="tabCon" style="display: block;">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+				<div class="tabCon">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+				<div class="tabCon">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="wrap2" class="wrap fr">
+			<ul class="navBar">
+				<li class="active">专题</li>
+				<li>视频</li>
+				<li>图片</li>
+			</ul>
+			<div class="con">
+				<div class="tabCon" style="display: block;">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>奇虎360纽交所上市</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+				<div class="tabCon">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>2011年IT领袖峰会</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+				<div class="tabCon">
+					<div class="icon fl">
+						<img style="display:block;" src="./images/tabIcon1.png">
+						<img src="./images/tabIcon2.png">
+						<img src="./images/tabIcon3.png">
+					</div>
+					<ul class="list fr">
+						<li class="">
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+						<li>
+							<h2>CCBN召开 助三网融合</h2>
+							<p>2016-10-12</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+init('#wrap1');
+init('#wrap2');
+function init(parent){
+	var wrap = $(parent);
+	var navBarLis = $('.navBar li',wrap);
+	var tabCon = $('.tabCon',wrap);
+	var navBarPrev = 0;//记录控制切换的按钮的上一个
+	var tabLiPrev = 0;//记录每个显示面板中切换的li的上一个
+	var tabConPrev = 0;//记录显示面板的上一个
+	var n = -1;//当每个显示面板中li切换时，改变n的值
+	var count = 0;//记录当前是第一个按钮及面板显示
+	for( var i = 0; i < navBarLis.length; i++){
+		navBarLis[i].index = i;//添加索引
+		navBarLis[i].onclick = function(){
+			if( this.index ==  navBarPrev ){//如果点击的是当前展示的按钮，则阻止代码执行
+				return;
+			}
+			navBarLis[navBarPrev].className = '';//清除上一个切换按钮的 样式，并为当前按钮添加样式
+			this.className = 'active';
+
+			tabCon[tabConPrev].style.display = 'none';//隐藏上一个面板，并展示当前面板
+			tabCon[this.index].style.display = 'block';
+
+			var clearLi = $('li',tabCon[tabConPrev]);//获取上一个面板中的所有Li,将li的样式重置为第一个选中
+			clearLi[tabLiPrev].className = '';//
+			clearLi[0].className = 'on';
+
+			navBarPrev = tabConPrev = count = this.index;//根据当前点击的按钮下标进行赋值
+
+			n = tabLiPrev = 0;//将n及面板中记录上一个Li的变量都重置为0
+		}
+		hoverLi(i);
+	}
+	wrap.onmouseover = function(){//鼠标移动到容器上时，清除定时器
+		clearInterval( timer );
+	}
+	wrap.onmouseout = function(){//鼠标从容器上移开时，重新开启定时器
+		timer = setInterval(function(){
+			tab(tabCon[count])
+		},1000);
+	}
+
+	function hoverLi(num){//获取不同面板下的li，并为每一个li添加鼠标移入事件
+		var hLi = $('li',tabCon[num]);
+		var hImg = $('img',tabCon[num]);
+		for(var i = 0; i < hLi.length; i++){
+			hLi[i].index = i;
+			hLi[i].onmouseover = function(){
+				hLi[tabLiPrev].className = '';
+				hImg[tabLiPrev].style.display = 'none';
+				this.className = 'on';
+				hImg[this.index].style.display = 'block';
+				n = tabLiPrev = this.index;
+			}
+		}
+	}
+
+	var timer = setInterval(function(){//定义定时器
+		tab(tabCon[count])
+	},1000);
+	tab(tabCon[count]);
+	function tab(ele){
+		var lis = $('li',ele);//获取对应面板下的Li
+		var imgs = $('img',ele);//获取对应面板下的img
+		lis[tabLiPrev].className = '';//清除上一个li的样式
+		imgs[tabLiPrev].style.display = 'none';
+		n++;
+		if( n > lis.length - 1 ){//如果n的值大于当前面板li的最大下标，表示可以进行面板的切换了，并将n重置为0
+			count++;//表示当前显示的按钮及面板的值
+			if( count > navBarLis.length - 1 ){//如果count的值大于按钮的最大下标，则重置为0
+				count = 0;
+			}
+			navBarLis[navBarPrev].className = '';//去除上一个按钮的样式
+			navBarLis[count].className = 'active';//为当前按钮添加样式
+			tabCon[tabConPrev].style.display = 'none';//隐藏上一个面板
+			tabCon[count].style.display = 'block';//显示当前面板
+
+			var nextTabLi = $('li',tabCon[count]);
+
+			//lis[tabLiPrev].className = '';
+			navBarPrev = tabConPrev = count;//添加完毕样式及展示当前面板后，将当前的下标赋值为上一个
+			n = 0;
+			nextTabLi[n].className = 'on';
+		}
+		tabLiPrev = n;
+		lis[n].className = 'on';
+		imgs[n].style.display = 'block';
+	}
+}
+</script>
+</body>
+</html>

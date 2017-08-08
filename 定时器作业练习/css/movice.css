@@ -1,0 +1,70 @@
+.wrap{
+	width: 658px;
+	height: 517px;
+	margin: 0 auto;
+	background: url(../images/moviceEm.png) no-repeat;
+	position: relative;
+}
+.logo{
+	position: absolute;
+	left: 245px;
+	bottom: 60px;
+}
+.moviceTopLeft{
+	width: 119px;
+	height: 142px;
+	position: absolute;
+	top: 0;
+	left: 46px;
+	background: url(../images/moviceTopLeft.png);
+	z-index: 9;
+}
+.moviceTopRight{
+	width: 119px;
+	height: 142px;
+	position: absolute;
+	top: 0;
+	right: 44px;
+	background: url(../images/moviceTopRight.png);
+	z-index: 9;
+}
+.box{
+	position: relative;
+	margin-left: 143px;
+	width: 380px;
+	height: 290px;
+	padding-top: 6px;
+	overflow: hidden;
+}
+#list{
+	position: absolute;
+	left: 0;
+	top: 6px;
+	overflow: hidden;
+}
+#list li{
+	float: left;
+	width: 380px;
+	height: 290px;
+	position: relative;
+	overflow: hidden;
+}
+.bar{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	text-indent: 18px;
+	color: #fff;
+	background: url(../images/moviceTitleBg.png);
+	bottom:-70px;
+	padding: 17px 0 5px;
+}
+.title{
+	line-height: 24px;
+	font-weight: bold;
+	font-size: 18px;
+}
+.info{
+	font-size: 14px;
+	line-height: 24px;
+}

@@ -1,0 +1,93 @@
+.box{
+	width: 1200px;
+	height: 540px;
+	padding-top: 260px;
+	background: url(../images/tabBg.png);
+	margin: 0 auto;
+}
+.wrap{
+	width: 450px;
+	/*height: 260px;*/
+	overflow: hidden;
+}
+#wrap1{
+	margin-left: 135px;
+	border-radius: 15px;
+	background: #fff;
+}
+#wrap2{
+	margin-right: 115px;
+	background: #ffb746;
+}
+.navBar{
+	height: 40px;
+	line-height: 40px;
+	background: #fff7e2;
+}
+.navBar li{
+	float: left;
+	box-sizing:border-box;
+	width: 33.333%;
+	text-align: center;
+	font-size: 16px;
+	border-right: 1px solid #ffdb86;
+	cursor: pointer;
+}
+.navBar li:nth-of-type(3){
+	border: none;
+}
+#wrap1 .navBar li.active{
+	background: #fff;
+	border: none;
+}
+#wrap2 .navBar li.active{
+	background: #ffb746;
+	color: #fff;
+	border: none;
+}
+#wrap1 .navBar{
+	color: #ffb746;
+}
+
+#wrap2 .navBar{
+	color: #000;
+	background: #fff7e2;
+}
+.con{
+	height: 180px;
+	padding: 20px;
+}
+.tabCon{
+	height: 180px;
+	display: none;
+}
+.icon img{
+	display: none;
+}
+.list{
+	width: 220px;
+	color: #ff9536;
+	text-indent: 10px;
+}
+#wrap2 .list{
+	color: #fff;
+}
+.list li{
+	height: 60px;
+}
+.list li h2{
+	padding-top: 16px;
+	font-size: 14px;
+}
+.list li p{
+	padding-top: 10px;
+	font-size: 12px;
+}
+#wrap1 .list li.on{
+	background: #ffb746;
+	color: #fff;
+}
+#wrap2 .list li.on{
+	background: #fff7e2;
+	color: #000;
+}

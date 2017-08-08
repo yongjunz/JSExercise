@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/utils.js"></script>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 50px;
+		height: 50px;
+		background: red;
+		position: absolute;
+		top:0;
+		text-align: center;
+		line-height: 50px;
+		font-size: 40px;
+		color: #fff;
+	}
+	</style>
+</head>
+<body>
+	<script>
+	//往页面动态添加div
+	var str = '';
+	for(var i = 0; i < 20; i++){
+		str +='<div>' + i + '</div>';
+	}
+	document.body.innerHTML += str;
+
+	//获取页面上的div
+	var divs = $('div');
+	var len = divs.length;
+	//设置div的left值
+	for(var j = 0; j < len; j++){
+		divs[j].style.left = 60*j + 'px';
+	}
+	var timer = null;
+	var state = true;
+	//为document添加点击事件
+	document.onclick = function(){
+		if( timer ){
+			return;
+		}
+		if( state ){
+			fly(500);
+		}else{
+			fly(0)
+		}
+	}
+
+	function fly(target){
+		var n = -1;
+		timer = setInterval(function(){
+			n++;
+			mTween( divs[n],'top',target,200,'linear',function(){
+				if( n == len-1 ){
+					clearInterval( timer );
+					state = !state;
+					timer = null;
+				}
+			} );
+		},30);
+	}
+
+
+
+	</script>
+</body>
+</html>
