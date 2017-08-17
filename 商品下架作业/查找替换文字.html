@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/search.css">
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<h1 class="logo">miaov.com</h1>
+		<div class="box clearfix">
+			<div id="textBox">
+				妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一途中全新的快乐学习方法！目前主要针对的是javascript培训，同时还提供了css教程、javascript视频、js特效等，最新推出了外地学员们喜欢的javascript网络课程服务，同时还为处于javascript入门阶段的朋友录制了大量javascript视频，其中涉及了大量javascript基础知识，希望妙味课堂推出的javascript网络培训课程能带给大家更多惊喜。
+			</div>
+			<div class="toolBar">
+				<div class="controller">展开</div>
+				<div class="controllerInp searchBox">查找</div>
+				<div class="controllerInp replaceBox">替换</div>
+			</div>
+		</div>
+		<div class="tabBox">
+			<div class="closeBtn"></div>
+			<p class="buttonWrap clearfix">
+				<input type="button" class="searchBtn" value="查找">
+				<input type="button" class="replaceBtn" value="替换">
+			</p>
+			<div class="operateBox clearfix" style="display: block;">
+				<input type="text" class="searchInp">
+				<input type="button" class="searchSubmit">
+			</div>
+			<div class="operateBox clearfix">
+				<input type="text" value="请输入内容" class="replaceInp">
+				<input type="text" class="replaceInp">
+				<input type="button" class="replaceSubmit">
+			</div>
+		</div>
+	</div>
+<script>
+var textBox = $('#textBox');
+var controller = $('.controller')[0];
+var controllerInp = $('.controllerInp');
+var tabBox = $('.tabBox')[0];
+var closeBtn = $('.closeBtn')[0];
+var buttonWrapInp = $('input',$('.buttonWrap')[0]);
+var operateBox = $('.operateBox');
+var searchInp = $('.searchInp')[0];
+var searchSubmit = $('.searchSubmit')[0];
+var replaceInp = $('.replaceInp');
+var replaceSubmit = $('.replaceSubmit')[0];
+var state = true;
+
+controller.onclick = function(){//展开按钮多次点击的效果
+	if(state){
+		this.innerHTML = '收起';
+		this.style.backgroundImage = 'url(./images/shrink.png)';
+		mTween(controllerInp[0],'top',95,200);
+		mTween(controllerInp[1],'top',190,400);
+		tabBox.style.display = 'block';
+	}else{
+		this.innerHTML = '展开';
+		this.style.backgroundImage = '';
+		mTween(controllerInp[0],'top',0,200);
+		mTween(controllerInp[1],'top',0,400);
+		tabBox.style.display = 'none';
+		textBox.innerHTML = textBox.innerHTML.split('<span>').join('').split('</span>').join('');//将所有的span标签删除
+	}
+	state = !state;
+}
+//关闭按钮
+closeBtn.onclick = function(){
+	tabBox.style.display = 'none';
+}
+//选项卡切换
+for( var i = 0; i < buttonWrapInp.length; i++ ){
+	buttonWrapInp[i].index = controllerInp[i].index = i;
+	buttonWrapInp[i].onclick = controllerInp[i].onclick = function(){
+		if( tabBox.style.display == 'none' ){
+			tabBox.style.display = 'block'
+		}
+		for( var i = 0; i < buttonWrapInp.length; i++ ){
+			operateBox[i].style.display = 'none';
+		}
+		operateBox[this.index].style.display = 'block';
+	}
+}
+
+
+//input框获得焦点时，清除文本中所有的span标签
+searchInp.onfocus =replaceInp[0].onfocus = replaceInp[1].onfocus = function(){
+	textBox.innerHTML = textBox.innerHTML.split('<span>').join('').split('</span>').join('');//将所有的span标签删除
+}
+
+searchSubmit.onclick = function(){//查找容器中提交按钮按下事件
+	if( searchInp.value =='' ){
+		alert('请输入需要查找的内容');
+		return;
+	}
+	//textBox.innerHTML = textBox.innerHTML.split('<span>').join('').split('</span>').join('');//进行查找前，先将所有的span标签删除
+	var str = textBox.innerHTML;
+	if( str.indexOf( searchInp.value ) == -1 ){
+		alert('没有查找到对应的内容！');
+		return;
+	}
+	textBox.innerHTML = str.split( searchInp.value ).join( `<span>${searchInp.value}</span>` );
+	searchInp.value = '';
+}
+replaceSubmit.onclick = function(){//替换容器中提交按钮按下事件
+	if( replaceInp[0].value =='' ){
+		alert('请输入需要替换的内容');
+		return;
+	}
+	var str = textBox.innerHTML;
+	if( str.indexOf( replaceInp[0].value ) == -1 ){
+		alert('没有查找到需要替换的内容！');
+		return;
+	}
+	textBox.innerHTML = str.split( replaceInp[0].value ).join( `<span>${replaceInp[1].value}</span>` );//替换操作
+	replaceInp[0].value = replaceInp[1].value = '';
+}
+</script>
+</body>
+</html>

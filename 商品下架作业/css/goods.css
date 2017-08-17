@@ -1,0 +1,183 @@
+body{
+	background: url(../images/bg.png);
+	background-size: cover;
+}
+.logo{
+	height: 175px;
+	font-size: 0;
+	background: url(../images/logo.png) no-repeat center;
+}
+#wrap{
+	width: 990px;
+	height: 400px;
+	overflow: hidden;
+	margin: 0 auto 10px;
+	position: relative;
+}
+#wrap li{
+	float: left;
+	width: 240px;
+	height: 400px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+.shade{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 240px;
+	height: 400px;
+	background:#000 url(../images/sold-out.png) no-repeat center;
+	z-index: -1;
+	transition:.3s;
+	opacity:0;
+	transform: scale(2);
+}
+/*#wrap li+li{
+	margin-left: 10px;
+	position: relative;
+}*/
+.setTimeH2{
+	height: 24px;
+	background: #000;
+	padding: 8px 10px 8px 20px;
+}
+.setTimeInp{
+	float: left;
+	width: 150px;
+	height: 24px;
+	line-height: 24px;
+	border: none;
+	background: none;
+	color: #e15671;
+	font-size: 16px;
+}
+.affirmTime{
+	float: right;
+	width: 55px;
+	height: 24px;
+	border: 1px solid #e15671;
+	color: #e15671;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 22px;
+	cursor: pointer;
+}
+.residueBox{
+	margin-top: 30px;
+	line-height: 28px;
+	height: 28px;
+}
+.residueText{
+	float: left;
+	width: 70px;
+	text-indent: 30px;
+	color: #8f8f8f;
+}
+.clockPoint,.clockNum{
+	float: left;
+	margin-right: 3px;
+	height: 28px;
+}
+.clockNum{
+	width: 19px;
+	position: relative;
+	overflow: hidden;
+}
+.clockNum p{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 19px;
+}
+.clockNum p span{
+	display: inline-block;
+	width: 19px;
+	height: 28px;
+	line-height: 28px;
+	background: #e15671;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.goodsImg{
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+.goodsImg span{
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+}
+.goodsImg img{
+	vertical-align: middle;
+}
+.goodsName{
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.goodsPrice{
+	text-align: center;
+	font-size: 16px;
+}
+.goodsPrice em{
+	color: #979797;
+}
+.goodsPrice span{
+	color: #e15671;
+	margin-left: -8px;
+}
+
+
+
+
+.box{
+	width: 990px;
+	margin: 0 auto;
+}
+.goodsTitle{
+	height: 40px;
+	line-height: 40px;
+	background: #000;
+	color: #fff;
+	font-size: 14px;
+}
+.showName{
+	float: left;
+	width: 455px;
+	text-indent: 15px;
+}
+.showPrice{
+	float: left;
+}
+.showImg{
+	float: right;
+	width: 58px;
+	height: 56px;
+	border:1px solid #bfbfbf;
+	margin: 10px 20px 0 0;
+	padding-top: 2px;
+	text-align: center;
+}
+.showImg img{
+	width: 38px;
+	height: 55px;
+}
+#list li{
+	height: 80px;
+	line-height: 80px;
+	background: #fff;
+	color: #000;
+	font-size: 16px;
+}
+#list li .showPrice{
+	color: #e15671;
+}

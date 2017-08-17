@@ -1,0 +1,67 @@
+body{
+	background: url(../images/carryBg.png);
+	background-size: cover;
+	color: #50389d;
+}
+.box{
+	width: 840px;
+	height: 420px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -225px 0 0 -425px;
+	padding: 30px 0 0 10px;
+	background: rgba(78,47,183,.5);
+	border-radius: 15px;
+}
+.con{
+	float: left;
+	margin-left: 18px;
+	background: #eef8fa;
+	height: 370px;
+	width: 290px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+#source{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	line-height: 30px;
+	color: #50389d;
+	font-size: 14px;
+}
+.midCon{
+	float: left;
+	width: 100px;
+	margin-left: 18px;
+	padding-top: 135px;
+}
+#carryBtn{
+	border-radius: 5px;
+	height: 54px;
+	line-height: 54px;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	padding-top: 26px;
+	background: #7ee4fd url(../images/carryDirection.png) no-repeat center 15px;
+	cursor: pointer;
+}
+.schedule{
+	text-align: center;
+	margin-top: 20px;
+	line-height: 14px;
+	color: #7ee4fd;
+	font-size: 14px;
+}
+.schedule span{
+	display: inline-block;
+}
+#target{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	line-height: 30px;
+}
