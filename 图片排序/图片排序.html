@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片排序</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+	<h2 class="logo"></h2>
+	<div id="inputBox">
+		<input type="button" class="on" value="从小到大">
+		<input type="button" value="打乱顺序">
+	</div>
+	<ul id="list" class="clearfix">
+		<!-- <li style="background-image: url(./images/one.png)">
+			<span>One</span>
+			<div class="bottomTitle">
+			</div>
+		</li> -->
+	</ul>
+<script>
+var arr = [
+		{
+			order : 'One',
+			bgUrl : 'background-image: url(./images/one.png)',
+			title : '1-粉红',
+			num : 0
+		},
+		{
+			order : 'Two',
+			bgUrl : 'background-image: url(./images/two.png)',
+			title : '2-粉黄',
+			num : 1
+		},
+		{
+			order : 'Three',
+			bgUrl : 'background-image: url(./images/three.png)',
+			title : '3-黄绿',
+			num : 2
+		},
+		{
+			order : 'Four',
+			bgUrl : 'background-image: url(./images/four.png)',
+			title : '4-嫩绿',
+			num : 3
+		},
+		{
+			order : 'Five',
+			bgUrl : 'background-image: url(./images/five.png)',
+			title : '5-湖蓝',
+			num : 4
+		},
+		{
+			order : 'Six',
+			bgUrl : 'background-image: url(./images/six.png)',
+			title : '6-蓝紫',
+			num : 5
+		},
+		{
+			order : 'Seven',
+			bgUrl : 'background-image: url(./images/seven.png)',
+			title : '7-粉紫',
+			num : 6
+		},
+		{
+			order : 'Eight',
+			bgUrl : 'background-image: url(./images/eight.png)',
+			title : '8-粉黄',
+			num : 7
+		}
+	];
+var inputBox = $('#inputBox');
+var inps = $('input',inputBox);
+var list = $('#list');
+
+//生成结构
+function creatLiHtml(data){
+	var html = data.map(function(item){
+	return `<li style="${item.bgUrl}">
+				<span>${item.order}</span>
+				<div class="bottomTitle">
+					${item.title}
+				</div>
+			</li>`;
+	}).join('');
+	return html;
+}
+list.innerHTML = creatLiHtml(arr);
+
+//从小到大
+inps[0].onclick = function(){
+	inps[1].className = '';
+	this.className = 'on';
+	arr.sort(function(a,b){
+		return a.num - b.num;
+	})
+	list.innerHTML = creatLiHtml(arr);
+}
+//利用sort()方法打乱排序
+/*inps[1].onclick = function(){
+	inps[0].className = '';
+	this.className = 'on';
+	arr.sort(function(){
+		return Math.random() - 0.5;
+	})
+	list.innerHTML = creatLiHtml(arr);
+}*/
+//利用随机生成8个数字来作为顺序实现打乱顺序
+inps[1].onclick = function(){
+	inps[0].className = '';
+	this.className = 'on';
+
+	var newArr = fn(0,7,8);
+	var html = '';
+	for( var i = 0; i < 8; i++ ){
+		html += `<li style="${arr[newArr[i]].bgUrl}">
+					<span>${arr[newArr[i]].order}</span>
+					<div class="bottomTitle">
+						${arr[newArr[i]].title}
+					</div>
+				</li>`;
+	}
+	list.innerHTML = html;
+}
+
+//生成n个从x到y之间不重复的数
+function fn(x,y,n){
+	var arr = [];
+	var obj = {};
+	for( var i = 0; i < n; i++ ){
+		var num = Math.round(Math.random()*(y-x)+x);
+		if( !obj[num] ){
+			arr.push(num);
+			obj[num] = true;
+		}else{
+			i > 0 ? i-- : '';
+		}
+	}
+	return arr;
+}
+</script>
+</body>
+</html>
