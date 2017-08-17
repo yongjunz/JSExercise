@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid #bdcec6;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        div.checked {
+            border-color: rgb(228, 57, 60);
+            background: url(images/1.png) no-repeat right bottom;
+        }
+        #box1,#box2{
+            width: 420px;
+            margin: 50px auto;
+            display: block;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <h2>模拟单选</h2>
+        <div>男</div>
+        <div>女</div>
+        <div>保密</div>
+    </div>
+    <div id="box2">
+        <h2>模拟多选</h2>
+        <div>animation</div>
+        <div>comics</div>
+        <div>game</div>
+    </div>
+    <script src="../utils.js"></script>
+    <script>
+    //模拟单选
+    box1 = $('#box1');
+    radioDivs = $('div',box1);
+    prevRadio = 0;
+    for( var i = 0; i < radioDivs.length; i++ ){
+        radioDivs[i].index = i;
+        radioDivs[i].onclick = (function(i){
+            return function(){
+                radioDivs[prevRadio].className = '';
+                this.className = 'checked';
+                prevRadio = this.index;
+            }
+
+        })(i);
+    }
+    //模拟多选
+    box2 = $('#box2');
+    selectDivs = $('div',box2);
+    for( var j = 0; j < selectDivs.length; j++ ){
+        selectDivs[j].state = true;
+        selectDivs[j].onclick = function(){
+            if( this.state ){
+                this.className = 'checked';
+            }else{
+                this.className = '';
+            }
+            this.state = !this.state;
+        }
+    }
+    </script>
+</body>
+</html>
