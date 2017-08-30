@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/public.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script src="./js/utils.js"></script>
+</head>
+<body>
+	<h2 class="logo"></h2>
+	<ul id="list" class="clearfix">
+		<!-- <li class="active">
+			<input type="checkbox">
+			<p class="fileName">新建文件夹</p>
+		</li> -->
+	</ul>
+	<input type="button" value="新建文件夹" id="creatFolder" />
+	<input type="button" value="删除文件夹" id="deleteFolder" />
+	<script>
+	var list = $('#list');
+	var creatFolder = $('#creatFolder');
+	var deleteFolder = $('#deleteFolder');
+	var n = 0;
+
+	//点击创建文件夹
+	creatFolder.onclick = function(){
+		if( list.children.length >= 3 ){
+			alert('超过创建上限！');
+			return;
+		}
+		n++;
+		//创建Li标签
+		var newLi = document.createElement('li');
+		//创建input标签
+		var newInp = document.createElement('input');
+		newInp.type="checkbox";
+		//创建p标签
+		var newP = document.createElement('p');
+		newP.innerHTML = '新建文件夹' + n;
+		//将p标签及input标签插入到Li标签中
+		newLi.appendChild(newInp);
+		newLi.appendChild(newP);
+
+		//为Li添加鼠标事件
+		newLi.onmouseover = function(){
+			this.className = newInp.className = 'active';
+		}
+		newLi.onmouseout = function(){
+			if( newInp.checked ){
+				return;
+			}else{
+				this.className = newInp.className = '';
+			}
+		}
+
+		//将Li标签插入list中
+		list.appendChild(newLi);
+
+	}
+	//点击删除文件夹
+	deleteFolder.onclick = function(){
+		Array.from(list.children).forEach(function(item){
+			Array.from(item.children).forEach(function(item){
+				if( item.nodeName === 'INPUT' && item.checked ){
+					item.parentNode.remove();
+				}
+			})
+		})
+	}
+	</script>
+</body>
+</html>

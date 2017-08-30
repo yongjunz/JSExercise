@@ -1,0 +1,71 @@
+body{
+	background-image: url(../images/bg.png);
+	background-size: cover;
+	color:#fff;
+}
+.logo{
+	height: 48px;
+	background: url(../images/logo.png) no-repeat center bottom;
+	padding-top: 80px;
+	margin: 0 auto 75px;
+}
+#list{
+	width: 500px;
+	height: 120px;
+	margin: 0 auto 42px;
+}
+#list li{
+	float: left;
+	margin: 0 20px;
+	width: 116px;
+	height: 116px;
+	text-align: center;
+	position: relative;
+	background-image: url(../images/wjj.png);
+	background-repeat: no-repeat;
+	background-position: center 25px;
+	border: 2px solid transparent;
+}
+#list li.active{
+	border-color: #b0a4c5;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 10px;
+}
+#list li input{
+	position: absolute;
+	left: 5px;
+	top:5px;
+	border: 1px solid #fff;
+	background: #948aa1;
+	cursor: pointer;
+	display: none;
+}
+#list li input.active{
+	display: block;
+}
+#list li p{
+	position: absolute;
+	height: 16px;
+	line-height: 16px;
+	width: 116px;
+	font-size: 16px;
+	text-align: center;
+	left: 0;
+	bottom:10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#creatFolder,#deleteFolder{
+	width: 128px;
+	height: 43px;
+	display: block;
+	margin: 0 auto 20px;
+	background: url(../images/creat.png);
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+}
+#deleteFolder{
+	background: url(../images/delete.png);
+	color: #000;
+}
