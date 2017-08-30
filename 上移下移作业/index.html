@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<section class="wrap">
+	<div class="wrap-left">
+		<ul class="list">
+			<li>
+				<span>jQuery</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up">上移</a>
+					<a href="javascript:;" class="down">下移</a>
+				</div>
+			</li>
+			<li>
+				<span>AJAX</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up">上移</a>
+					<a href="javascript:;" class="down">下移</a>
+				</div>
+			</li>
+			<li>
+				<span>JS基础-2</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up">上移</a>
+					<a href="javascript:;" class="down">下移</a>
+				</div>
+			</li>
+			<li>
+				<span>移动端实战</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up">上移</a>
+					<a href="javascript:;" class="down">下移</a>
+				</div>
+			</li>
+			<li>
+				<span>canvas游戏</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up">上移</a>
+					<a href="javascript:;" class="down">下移</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="wrap-right">
+		<ul class="list">
+			<li>
+				<span>jQuery</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up"></a>
+					<a href="javascript:;" class="down"></a>
+				</div>
+			</li>
+			<li>
+				<span>小程序</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up"></a>
+					<a href="javascript:;" class="down"></a>
+				</div>
+			</li>
+			<li>
+				<span>jQuery</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up"></a>
+					<a href="javascript:;" class="down"></a>
+				</div>
+			</li>
+			<li>
+				<span>面向对象-上</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up"></a>
+					<a href="javascript:;" class="down"></a>
+				</div>
+			</li>
+			<li>
+				<span>面向对象-下</span>
+				<div class="btn">
+					<a href="javascript:;"  class="up"></a>
+					<a href="javascript:;" class="down"></a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+<script src="./js/utils.js"></script>
+<script>
+var list = $('.list');
+
+
+func(list[0]);
+func(list[1]);
+var state = false;
+function func(parent){
+	var lis = $('li',parent);
+	var upBtn = $('.up',parent);
+	var downBtn = $('.down',parent);
+	for( var i = 0; i < lis.length; i++ ){
+		upBtn[i].index = downBtn[i].index = lis[i].index = i;
+		lis[i].style.position = 'absolute';
+		lis[i].style.top = i * 62 + 'px';
+
+		upBtn[i].onclick = function(){//上移按钮
+			if( state ){
+				
+				return;
+			}
+			state = true;
+			var that = this;
+			if( lis[this.index].previousElementSibling ){//如果当前点击的li存在上一个兄弟按钮
+				var prevTop = lis[this.index].previousElementSibling.offsetTop;//获取上一个li的offsetTop值
+				var nowTop = lis[this.index].offsetTop;//获取当前点击li的offsetTop值
+				mTween(lis[this.index],{'top':prevTop},300);//将当前Li运动到上一个Li的位置
+				mTween(lis[this.index].previousElementSibling,{'top':nowTop},300,'linear',function(){//将上一个Li运动到当前点击的Li的位置，运动完毕后，将html结构中2者的顺序交换
+					parent.insertBefore(lis[that.index],lis[that.index].previousElementSibling);
+					func(parent);
+					state = false;
+				});
+			}else{//如果当前点击的li没有上一个兄弟li,那么则获取最后一个Li的offsetTop值，让当前点击的Li的运动到最后一个Li的位置，并且让剩下的li分别运动到自己的上一个li的位置
+				var prevTop = parent.lastElementChild.offsetTop;
+				mTween(lis[this.index],{'top':prevTop},300,'linear',function(){
+					parent.appendChild(lis[that.index]);
+					func(parent);
+					state = false;
+				});
+				for( var i = 1; i < lis.length; i++ ){
+					mTween(lis[i],{'top':lis[i].previousElementSibling.offsetTop},300);
+				}
+
+			}
+		}
+		downBtn[i].onclick = function(){//下移按钮,逻辑同上
+			if( state ){
+				return;
+			}
+			state = true;
+			var that = this;
+			if( lis[this.index].nextElementSibling ){
+				var prevTop = lis[this.index].nextElementSibling.offsetTop;
+				var nowTop = lis[this.index].offsetTop;
+				mTween(lis[this.index],{'top':prevTop},300);
+				mTween(lis[this.index].nextElementSibling,{'top':nowTop},300,'linear',function(){
+					parent.insertBefore(lis[that.index],lis[that.index].nextElementSibling.nextElementSibling);
+					func(parent);
+					state = false;
+				});
+			}else{
+				var prevTop = parent.firstElementChild.offsetTop;
+				mTween(lis[this.index],{'top':prevTop},300,'linear',function(){
+					parent.insertBefore(lis[that.index],parent.firstElementChild);
+					func(parent);
+					state = false;
+				});
+				for( var i = 0; i < lis.length - 1; i++ ){
+					mTween(lis[i],{'top':lis[i].nextElementSibling.offsetTop},300);
+				}
+			}
+		}
+
+	}
+}
+</script>
+</body>
+</html>
